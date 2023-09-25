@@ -15,7 +15,7 @@ public class Articulo {
 		this.precio = precio;
 	}
 	
-	private Integer getId() {
+	public Integer getId() {
 		return id;
 	}
 	private void setId(Integer id) {
@@ -50,7 +50,7 @@ public class Articulo {
 				&& Float.floatToIntBits(precio) == Float.floatToIntBits(other.precio);
 	}
 
-	private float getPrecio() {
+	float getPrecio() {
 		return precio;
 	}
 	private void setPrecio(float precio) {
