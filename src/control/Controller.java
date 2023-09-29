@@ -6,25 +6,31 @@ import java.util.Optional;
 
 import model.data.Articulo;
 import model.data.Cliente;
+import model.data.Pedido;
 import model.repositories.ArticuloRepositorio;
 import model.repositories.ClienteRepositorio;
 
 public class Controller {
-	//TODO
-	private ClienteRepositorio clienteRepositorio;
+	private ClienteService service;
 	private ArticuloRepositorio articuloRepositorio;
+	//Bicontroller
+	/**
+	 * Todos los pedidos de un cliente (busca por dni) 
+	 */
+	public List<Pedido> getPedidosByClienteDni(String dni) {
+		return service.getPedidosByClienteDni(dni);
+	}
 	/**
 	 * Necesito la lista completa de clientes
 	 */
 	public List<Cliente> getClientes(){
-		//TODO
-		return clienteRepositorio.findClientes();
+		return service.findClientes();
 	}
 	/**
 	 * necesito un cliente por id
 	 */
 	public Optional<Cliente> getClienteBydni(String dni){
-		return clienteRepositorio.findClienteByDni(dni);
+		return service.findClienteByDni(dni);
 	}
 	/**
 	 * Todos los articulos 
@@ -46,5 +52,11 @@ public class Controller {
 	 */
 	/**
 	 * Los vendedores con una ruta sur o central
+	 */
+	/**
+	 * Los pedidos donde se vende un articulo concreto
+	 */
+	/**
+	 * Para un cliente, la facturacion total entre dos fechas
 	 */
 }
