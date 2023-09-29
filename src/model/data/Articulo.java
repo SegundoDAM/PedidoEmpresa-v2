@@ -50,7 +50,7 @@ public class Articulo {
 				&& Float.floatToIntBits(precio) == Float.floatToIntBits(other.precio);
 	}
 
-	float getPrecio() {
+	public float getPrecio() {
 		return precio;
 	}
 	private void setPrecio(float precio) {
