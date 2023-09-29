@@ -22,4 +22,10 @@ public class Controller {
 	public Optional<Cliente> getClienteBydni(String dni){
 		return clienteRepositorio.findClienteByDni(dni);
 	}
+	/**
+	 * Todos los articulos 
+	 */
+	/**
+	 * Todos los articulos en un rango de precios
+	 */
 }
