@@ -1,6 +1,10 @@
 package model.data;
 
 public class Vendedor extends Persona {
+	public final boolean rutaEquals(Object other) {
+		return ruta.equals(other);
+	}
+
 	private Ruta ruta;
 
 	public Vendedor(String dNICliente, String nombre, Ruta ruta) {
@@ -8,7 +12,7 @@ public class Vendedor extends Persona {
 		this.ruta = ruta;
 	}
 
-	private Ruta getRuta() {
+	public Ruta getRuta() {
 		return ruta;
 	}
 

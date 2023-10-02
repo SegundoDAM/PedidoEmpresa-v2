@@ -27,4 +27,9 @@ public abstract class Pedido {
 		}
 		return total;
 	}
+	public boolean contains(Articulo articulo) {
+		return lineasPedido.stream().anyMatch((linea)->{
+			return linea.getArticulo().equals(articulo);
+		});
+	}
 }

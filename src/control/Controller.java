@@ -6,13 +6,19 @@ import java.util.Optional;
 
 import model.data.Articulo;
 import model.data.Cliente;
+import model.data.Dependiente;
 import model.data.Pedido;
+import model.data.Ruta;
+import model.data.Vendedor;
 import model.repositories.ArticuloRepositorio;
 import model.repositories.ClienteRepositorio;
+import model.repositories.DependienteRepositorio;
+import model.repositories.VendedorRepositorio;
 
 public class Controller {
 	private ClienteService service;
-	private ArticuloRepositorio articuloRepositorio;
+	private DependienteRepositorio dependienteRepositorio;
+	private VendedorRepositorio vendedorRepositorio;
 	//Bicontroller
 	/**
 	 * Todos los pedidos de un cliente (busca por dni) 
@@ -44,18 +50,27 @@ public class Controller {
 	public List<Articulo> getArticulosBetweenPrecios(float minimo,float maximo){
 		//clausula guarda
 		if(minimo<=maximo)
-			return articuloRepositorio.findByRange(minimo,maximo);
+			return service.getArticuloByPrizeRange(minimo,maximo);
 		return new LinkedList<Articulo>();
 	}
 	/**
 	 * Los dependientes, la lista de todos
 	 */
+	public List<Dependiente> getDpendientes(){
+		return dependienteRepositorio.findAll();
+	}
 	/**
 	 * Los vendedores con una ruta sur o central
 	 */
+	public List<Vendedor> getVendedoresRutaSurOCentral(){
+		return vendedorRepositorio.findByRoutes(Ruta.sur,Ruta.central);
+	}
 	/**
 	 * Los pedidos donde se vende un articulo concreto
 	 */
+	public List<Pedido> getPedidosWithArticulo(Integer idArticulo){
+		return service.getPedidosWithArticulo(idArticulo);
+	}
 	/**
 	 * Para un cliente, la facturacion total entre dos fechas
 	 */

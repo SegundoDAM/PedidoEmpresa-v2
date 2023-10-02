@@ -8,7 +8,7 @@ public class LineaPedido {
 		this.articulo = articulo;
 		this.cantidad = cantidad;
 	}
-	private Articulo getArticulo() {
+	Articulo getArticulo() {
 		return articulo;
 	}
 	private void setArticulo(Articulo articulo) {
