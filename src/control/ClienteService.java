@@ -6,9 +6,11 @@ import java.util.Optional;
 import model.data.Articulo;
 import model.data.Cliente;
 import model.data.Pedido;
+import model.data.Vendedor;
 import model.repositories.ArticuloRepositorio;
 import model.repositories.ClienteRepositorio;
 import model.repositories.PedidoRepositorio;
+import model.repositories.VendedorRepositorioFOM;
 
 public class ClienteService {
 
@@ -44,6 +46,11 @@ public class ClienteService {
 
 	public List<Articulo> getArticuloByPrizeRange(float minimo, float maximo) {
 		return articuloRepositorio.findByRange(minimo, maximo);
+	}
+
+
+	public List<Pedido> getPedidosByVendedor(Vendedor vendedor) {
+		return pedidoRepositorio.findByVendedor(vendedor);
 	}
 	
 }

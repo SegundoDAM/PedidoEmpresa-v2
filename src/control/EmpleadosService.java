@@ -1,6 +1,7 @@
 package control;
 
 import java.util.List;
+import java.util.Optional;
 
 import model.data.Dependiente;
 import model.data.Ruta;
@@ -22,5 +23,9 @@ public class EmpleadosService {
 	 */
 	public List<Vendedor> getVendedoresRutaSurOCentral(){
 		return vendedorRepositorio.findByRoutes(Ruta.sur,Ruta.central);
+	}
+	public Optional<Vendedor> getVendedorById(String idVendedor) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 import model.data.Articulo;
 import model.data.Cliente;
 import model.data.Pedido;
+import model.data.Vendedor;
 
 public class PedidoRepositorio {
 	List<Pedido> pedidos;
@@ -20,5 +21,10 @@ public class PedidoRepositorio {
 		return pedidos.stream().filter((pedido)->{
 			return pedido.contains(articulo);
 		}).collect(Collectors.toList());
+	}
+
+	public List<Pedido> findByVendedor(Vendedor findById) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

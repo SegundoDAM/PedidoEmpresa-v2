@@ -74,4 +74,10 @@ public class Controller {
 	/**
 	 * Para un cliente, la facturacion total entre dos fechas
 	 */
+	/**
+	 * Lista de los pedidos vendidos por un Vendedor con id concreto
+	 */
+	public List<Pedido> getPedidosByVendedor(String idVendedor){
+		return clienteService.getPedidosByVendedor(empleadosService.getVendedorById(idVendedor).orElseThrow());
+	}
 }

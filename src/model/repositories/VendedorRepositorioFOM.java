@@ -3,6 +3,7 @@ package model.repositories;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import model.data.Ruta;
@@ -28,6 +29,11 @@ public class VendedorRepositorioFOM {
 						.anyMatch((ruta)->{return vendedor.rutaEquals(ruta);});
 			})
 			.collect(Collectors.toList());
+	}
+
+	public Optional<Vendedor> findById(String idVendedor) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
