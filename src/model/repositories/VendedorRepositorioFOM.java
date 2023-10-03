@@ -7,9 +7,10 @@ import java.util.stream.Collectors;
 
 import model.data.Ruta;
 import model.data.Vendedor;
+import objectMother.VendedorOM;
 
-public class VendedorRepositorio {
-	List<Vendedor> vendedores;
+public class VendedorRepositorioFOM {
+	List<Vendedor> vendedores=new VendedorOM().getVendedores();
 
 	public List<Vendedor> findByRoutes(Ruta... rutas) {
 		ArrayList<Vendedor> vendedoresResult = new ArrayList<Vendedor>();
@@ -23,10 +24,10 @@ public class VendedorRepositorio {
 
 	public List<Vendedor> findByRoutesDos(Ruta... rutas) {
 		return vendedores.stream().filter((vendedor) -> {
-				return Arrays.asList(rutas).stream()...;
+				return Arrays.asList(rutas).stream()
+						.anyMatch((ruta)->{return vendedor.rutaEquals(ruta);});
 			})
 			.collect(Collectors.toList());
-		});
 	}
 
 }
