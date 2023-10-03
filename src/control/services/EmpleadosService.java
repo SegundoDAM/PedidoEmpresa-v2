@@ -1,4 +1,4 @@
-package control;
+package control.services;
 
 import java.util.List;
 import java.util.Optional;
@@ -7,11 +7,17 @@ import model.data.Dependiente;
 import model.data.Ruta;
 import model.data.Vendedor;
 import model.repositories.DependienteRepositorio;
+import model.repositories.VendedorRepositorio;
 import model.repositories.VendedorRepositorioFOM;
 
 public class EmpleadosService {
 	private DependienteRepositorio dependienteRepositorio;
-	private VendedorRepositorioFOM vendedorRepositorio;
+	private VendedorRepositorio vendedorRepositorio;
+	
+	public EmpleadosService(VendedorRepositorio vendedorRepositorio) {
+		super();
+		this.vendedorRepositorio = vendedorRepositorio;
+	}
 	/**
 	 * Los dependientes, la lista de todos
 	 */

@@ -4,6 +4,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
 
+import control.services.ClienteService;
+import control.services.EmpleadosService;
 import model.data.Articulo;
 import model.data.Cliente;
 import model.data.Dependiente;
@@ -14,11 +16,19 @@ import model.repositories.ArticuloRepositorio;
 import model.repositories.ClienteRepositorio;
 import model.repositories.DependienteRepositorio;
 import model.repositories.VendedorRepositorioFOM;
+import model.repositories.VendedorRepositorioFicheros;
 
 public class Controller {
 	private ClienteService clienteService;
 	private EmpleadosService empleadosService;
+	
+	
 
+	public Controller() {
+		super();
+//		empleadosService=new EmpleadosService(new VendedorRepositorioFOM());
+		empleadosService=new EmpleadosService(new VendedorRepositorioFicheros());
+	}
 	//Bicontroller
 	/**
 	 * Todos los pedidos de un cliente (busca por dni) 

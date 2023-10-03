@@ -10,7 +10,7 @@ import model.data.Ruta;
 import model.data.Vendedor;
 import objectMother.VendedorOM;
 
-public class VendedorRepositorioFOM {
+public class VendedorRepositorioFOM implements VendedorRepositorio {
 	List<Vendedor> vendedores=new VendedorOM().getVendedores();
 
 	public List<Vendedor> findByRoutes(Ruta... rutas) {

@@ -10,8 +10,8 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="2" language="java" name="control.ClienteService" project="PedidoEmpresa v2" 
-    file="/PedidoEmpresa v2/src/control/ClienteService.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="2" language="java" name="control.services.ClienteService" project="PedidoEmpresa v2" 
+    file="/PedidoEmpresa v2/src/control/services/ClienteService.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="66" width="153" x="379" y="173"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      

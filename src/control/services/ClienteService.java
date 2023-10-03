@@ -1,4 +1,4 @@
-package control;
+package control.services;
 
 import java.util.List;
 import java.util.Optional;
@@ -19,6 +19,12 @@ public class ClienteService {
 	private ClienteRepositorio clienteRepositorio;
 	
 	
+	public ClienteService() {
+		super();
+		pedidoRepositorio=new PedidoRepositorio();
+	}
+
+
 	public List<Pedido> getPedidosByClienteDni(String dni){
 		return pedidoRepositorio.findPedidosByCliente(clienteRepositorio.findClienteByDni(dni));
 	}
