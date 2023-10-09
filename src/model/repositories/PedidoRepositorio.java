@@ -22,9 +22,5 @@ public class PedidoRepositorio {
 			return pedido.contains(articulo);
 		}).collect(Collectors.toList());
 	}
-
-	public List<Pedido> findByVendedor(Vendedor findById) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 }

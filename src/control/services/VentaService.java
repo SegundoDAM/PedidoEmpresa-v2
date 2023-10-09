@@ -2,6 +2,7 @@ package control.services;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import model.data.Articulo;
 import model.data.Cliente;
@@ -9,17 +10,18 @@ import model.data.Pedido;
 import model.data.Vendedor;
 import model.repositories.ArticuloRepositorio;
 import model.repositories.ClienteRepositorio;
+import model.repositories.PedidoComercialRepositorio;
 import model.repositories.PedidoRepositorio;
 import model.repositories.VendedorRepositorioFOM;
 
-public class ClienteService {
+public class VentaService {
 
 	private PedidoRepositorio pedidoRepositorio;
 	private ArticuloRepositorio articuloRepositorio;
 	private ClienteRepositorio clienteRepositorio;
+	private PedidoComercialRepositorio pedidoComercialRepositorio;
 	
-	
-	public ClienteService() {
+	public VentaService() {
 		super();
 		pedidoRepositorio=new PedidoRepositorio();
 	}
@@ -56,7 +58,10 @@ public class ClienteService {
 
 
 	public List<Pedido> getPedidosByVendedor(Vendedor vendedor) {
-		return pedidoRepositorio.findByVendedor(vendedor);
+		return pedidoComercialRepositorio.findByVendedor(vendedor)
+				.stream()
+				.map((pedido)->{return (Pedido)pedido;})
+				.collect(Collectors.toList());
 	}
 	
 }

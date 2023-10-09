@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
 
-import control.services.ClienteService;
+import control.services.VentaService;
 import control.services.EmpleadosService;
 import model.data.Articulo;
 import model.data.Cliente;
@@ -19,7 +19,7 @@ import model.repositories.VendedorRepositorioFOM;
 import model.repositories.VendedorRepositorioFicheros;
 
 public class Controller {
-	private ClienteService clienteService;
+	private VentaService clienteService;
 	private EmpleadosService empleadosService;
 	
 	

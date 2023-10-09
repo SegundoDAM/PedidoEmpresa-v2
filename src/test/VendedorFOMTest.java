@@ -6,7 +6,7 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
-import control.services.ClienteService;
+import control.services.VentaService;
 import control.services.EmpleadosService;
 import model.data.Ruta;
 import model.data.Vendedor;
@@ -28,10 +28,10 @@ class VendedorFOMTest {
 	@Test
 	void otro(){
 		//getPedidosByVendedor
-		ClienteService clienteService=new ClienteService();
+		VentaService clienteService=new VentaService();
 		EmpleadosService empleadosService=new EmpleadosService(new VendedorRepositorioFOM());
 		
 		String dni = "1";
-		clienteService.getPedidosByVendedor(empleadosService.getVendedorById(dni));
+		clienteService.getPedidosByVendedor(empleadosService.getVendedorById(dni).get());
 	}
 }
