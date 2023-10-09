@@ -26,8 +26,8 @@ public class Controller {
 
 	public Controller() {
 		super();
-//		empleadosService=new EmpleadosService(new VendedorRepositorioFOM());
-		empleadosService=new EmpleadosService(new VendedorRepositorioFicheros());
+		empleadosService=new EmpleadosService(new VendedorRepositorioFOM());
+//		empleadosService=new EmpleadosService(new VendedorRepositorioFicheros());
 	}
 	//Bicontroller
 	/**

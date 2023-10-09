@@ -30,8 +30,9 @@ public class EmpleadosService {
 	public List<Vendedor> getVendedoresRutaSurOCentral(){
 		return vendedorRepositorio.findByRoutes(Ruta.sur,Ruta.central);
 	}
-	public Optional<Vendedor> getVendedorById(String idVendedor) {
+	public Optional<Vendedor> getVendedorById(String dni) {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
 }

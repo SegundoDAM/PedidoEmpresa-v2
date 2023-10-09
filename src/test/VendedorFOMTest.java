@@ -6,6 +6,8 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
+import control.services.ClienteService;
+import control.services.EmpleadosService;
 import model.data.Ruta;
 import model.data.Vendedor;
 import model.repositories.VendedorRepositorioFOM;
@@ -23,4 +25,13 @@ class VendedorFOMTest {
 		assertTrue(findByRoutes.containsAll(vendedorRepositorio.findByRoutesDos(Ruta.sur,Ruta.central)));
 	}
 
+	@Test
+	void otro(){
+		//getPedidosByVendedor
+		ClienteService clienteService=new ClienteService();
+		EmpleadosService empleadosService=new EmpleadosService(new VendedorRepositorioFOM());
+		
+		String dni = "1";
+		clienteService.getPedidosByVendedor(empleadosService.getVendedorById(dni));
+	}
 }
